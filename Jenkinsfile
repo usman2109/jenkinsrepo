@@ -1,11 +1,20 @@
-class hello { 
-
- public static void main(String[] args) 
-
- { 
-
- System.out.println("Pipeline Script Using SCM-GIT!"); 
-
- } 
-
-} 
+pipeline {
+    agent any
+    stages {
+        stage('build') {
+        		    steps {
+         		       echo "SCM Build Stage"
+     			  }
+        }
+        stage('Test') {
+            steps {
+               	  echo "SCM Test Stage"
+            		        }
+                }
+        stage('Deploy') {
+           		 steps {
+                		echo "SCM Deploy Stage"
+            			}
+        		         }
+    }
+}
